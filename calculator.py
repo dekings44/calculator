@@ -35,7 +35,7 @@ signs = {
 
 def calculator():
 
-    num1 = int(input('What is the first number?\n'))
+    num1 = float(input('What is the first number?\n'))
 
 
     for symbol in signs:
@@ -48,7 +48,7 @@ def calculator():
 
         sign_symbol = input('Please pick a sign from the above\n')
 
-        num2 = int(input('What is the second number?\n'))
+        num2 = float(input('What is the second number?\n'))
         calculation_function = signs[sign_symbol]
         answer = calculation_function(num1, num2)
 
