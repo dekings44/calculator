@@ -1,4 +1,6 @@
+from art import logo
 
+print(logo)
 
 
 
@@ -31,26 +33,32 @@ signs = {
     '/': subtract
     }
 
-num1 = int(input('What is the first number?\n'))
+def calculator():
+
+    num1 = int(input('What is the first number?\n'))
 
 
-for symbol in signs:
-    print(symbol)
+    for symbol in signs:
+        print(symbol)
 
 
-should_continue = True
+    should_continue = True
 
-while should_continue:
+    while should_continue:
 
-    sign_symbol = input('Please pick a sign from the above\n')
+        sign_symbol = input('Please pick a sign from the above\n')
 
-    num2 = int(input('What is the second number?\n'))
-    calculation_function = signs[sign_symbol]
-    answer = calculation_function(num1, num2)
+        num2 = int(input('What is the second number?\n'))
+        calculation_function = signs[sign_symbol]
+        answer = calculation_function(num1, num2)
 
-    print(f'{num1} {sign_symbol} {num2} = {answer}')
+        print(f'{num1} {sign_symbol} {num2} = {answer}')
 
-    if input(f"Type 'y' to continue calculating with {answer}: ") == "y":
-        num1 = answer
-    else:
-        should_continue = False
+        if input(f"Type 'y' to continue calculating with {answer}: ") == "y":
+            num1 = answer
+        else:
+            should_continue = False
+            calculator()
+
+
+calculator()
